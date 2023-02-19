@@ -16,18 +16,24 @@ export const Filter = ({ filterData, searchState, getDataByQuery }) => {
 
   return (
     <div className="container">
-      <form className="filter__form" onSubmit={onSubmit}>
-        <input
-          onChange={onChange}
-          className="filter__search"
-          type="text"
-          name="username"
-          value={query}
-          placeholder="Search..."
-        />
-        <Select filterData={filterData} />
-        <Buttom bgUrl={background} type="submit" custumStyle={'filter__submit'} />
-      </form>
+      <div className="filter__wraper">
+        <form className="filter__form" onSubmit={onSubmit}>
+          <input
+            onChange={onChange}
+            className="filter__search"
+            type="text"
+            name="username"
+            value={query}
+            placeholder="Search..."
+          />
+          <Select filterData={filterData} />
+          <Buttom
+            bgUrl={background}
+            type="submit"
+            custumStyle={'filter__submit'}
+          />
+        </form>
+      </div>
     </div>
   );
 };
