@@ -15,13 +15,16 @@
     align-items: center;
     justify-content: space-between;
     padding-left: 16px;
+    margin-left: 130px;
     // margin-right: 20px;
-     @include mq(tablet) {
+     @include mq(tablet-only) {
     margin-left: auto;
     margin-right: auto;
     transform: translateX(-52px);
    }
     @include mq(mobile-only) {
+    margin-left: 5px;
+
     width: calc(100% - 48px - 32px - 12px);  
       flex-direction: column;
     }

@@ -8,8 +8,8 @@
   justify-content: center;
   align-items: center;
   margin-top: auto;
-  
-    // flex: 0 0 auto;
+
+  // flex: 0 0 auto;
   width: 100%;
   height: 60px;
   .container {
@@ -20,6 +20,9 @@
     // justify-content: center;
     align-items: center;
     justify-content: space-between;
+    padding: 0 130px;
+  height: 60px;
+
   }
   &__logo {
     // padding-top: 10px;
@@ -30,8 +33,8 @@
     font-weight: 400;
     font-size: 24px;
     line-height: 29px;
-       @include mq(mobile-only) {
- font-size: 12px;
+    @include mq(mobile-only) {
+      font-size: 12px;
     }
   }
   &__right {
@@ -39,19 +42,18 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 142%;
-          @include mq(mobile-only) {
- font-size: 12px;
+    @include mq(mobile-only) {
+      font-size: 12px;
     }
   }
   &__year {
-
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 142%;
     margin-right: 0;
-          @include mq(mobile-only) {
- font-size: 12px;
+    @include mq(mobile-only) {
+      font-size: 12px;
     }
   }
 }

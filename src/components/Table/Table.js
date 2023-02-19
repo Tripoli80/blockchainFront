@@ -17,7 +17,8 @@ export default function Table(props) {
   };
 
   const genCell = txt => {
-    const newTxt = txt.length > 15 ? txt.substring(0, 15) + '...' : txt;
+    txt=txt.toString();
+    const newTxt = txt.length > 10 ? txt.substring(0, 10) + '...' : txt;
 
     return (
       <span
@@ -99,10 +100,10 @@ export default function Table(props) {
                     {genDate(item.timestamp)}
                   </td>
                   <td key={nanoid()} data-label="Value">
-                    {parseInt(item.value) / 10 ** 18}
+                    {genCell(parseInt(item.value) / 10 ** 18)}
                   </td>
                   <td key={nanoid()} data-label="Transaction Fee">
-                    {parseInt(item.totalfee) / 10 ** 18}
+                    {genCell(parseInt(item.totalfee) / 10 ** 18)}
                   </td>
                 </tr>
               );

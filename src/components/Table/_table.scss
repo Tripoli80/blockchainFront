@@ -92,8 +92,10 @@ table {
   margin: 16px 0;
   font-size: 0.9em;
   font-family: sans-serif;
-  min-width: 400px;
   width: 100%;
+  min-width: 400px;
+  max-width: 1180px;
+
   caption {
     font-size: 1.5em;
     margin: 0.5em 0 0.75em;
@@ -223,7 +225,7 @@ table {
       border-bottom: 0;
     }
   }
-  
+
   @include mq(tablet-only) {
     margin-top: 20px;
 
