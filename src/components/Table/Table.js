@@ -17,7 +17,7 @@ export default function Table(props) {
   };
 
   const genCell = txt => {
-    txt=txt.toString();
+    txt = txt ? txt.toString() : 'no data';
     const newTxt = txt.length > 10 ? txt.substring(0, 10) + '...' : txt;
 
     return (
@@ -82,7 +82,7 @@ export default function Table(props) {
               return (
                 <tr key={item.id}>
                   <td key={nanoid()} data-label="Block number">
-                    {parseInt(item.blockNumber)}
+                    {genCell(parseInt(item.blockNumber))}
                   </td>
                   <td key={nanoid()} data-label="Transaction ID">
                     {genCell(item.hash)}

@@ -30,7 +30,7 @@ function App() {
         const { total, result, lastBlock } = response.data;
         setTotal(total);
         setLastBlock(lastBlock);
-        setData(result);
+        setData(result?result:[]);
       })
       .catch(error => {
         console.log(error);
@@ -93,9 +93,15 @@ function App() {
     }
   };
 
+  const toReset = () => { 
+    setSelectedItem('Choose...')
+    setCurrentPage(1);
+    setQueryString('');
+  }
+
   return (
     <div className="App">
-      <Header />
+      <Header toReset={toReset} />
       <Filter
         searchState={{ query, setQuery }}
         filterData={{ selectedItem, setSelectedItem }}
