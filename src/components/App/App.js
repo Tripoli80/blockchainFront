@@ -113,13 +113,13 @@ function App() {
       {!data && (
         <div className="container">
           <RotatingSquare
-            height="500"
-            width="500"
+            height="320"
+            width="320"
             color="#3A80BA"
             ariaLabel="rotating-square-loading"
             strokeWidth="4"
             wrapperStyle={{}}
-            wrapperClass=""
+            wrapperClass="rotatingSquare"
             visible={true}
           />
         </div>
