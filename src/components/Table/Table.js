@@ -80,7 +80,7 @@ export default function Table(props) {
           <tbody>
             {currentTableData.map(item => {
               return (
-                <tr key={item.id}>
+                <tr key={nanoid()}>
                   <td key={nanoid()} data-label="Block number">
                     {genCell(parseInt(item.blockNumber))}
                   </td>

@@ -9,9 +9,23 @@ h1 {
 }
 header {
   background-color: $bg-color;
+  padding-left: 130px;
+  padding-right: 130px;
+  @include mq(mobile-only) {
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+    // height: 1060px;
+  }
+  @include mq(tablet-only) {
+    display: block;
+    padding-left: 30;
+    padding-right: 30;
+    // height: 1060px;
+  }
   .container {
     max-width: none;
-    // padding: 0 10px ;
+    max-width: 1440px;
   }
 }
 
@@ -26,7 +40,7 @@ header {
   font-size: 40px;
   line-height: 49px;
   color: $white-color;
-  margin-left: 130px;
+  // margin-left: 130px;
 
   @include mq(mobile-only) {
     margin-left: 15px;
