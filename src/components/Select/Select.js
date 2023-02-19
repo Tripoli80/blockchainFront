@@ -7,6 +7,7 @@ export default function Select({ filterData }) {
     { value: 'recipient', label: 'Recipient' },
     { value: 'sender', label: 'Sender' },
     { value: 'transaction_id', label: 'Transaction ID' },
+    { value: 'blocknumber', label: 'Block Number' },
   ];
   const [activeFilterDropdown, setActiveFilterDropdown] = useState("item-dd'");
   //   let itemDD;

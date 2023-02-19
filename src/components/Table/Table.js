@@ -66,28 +66,44 @@ export default function Table(props) {
         <table className="styled-table ">
           <thead>
             <tr>
-              <th>Block number</th>
-              <th>Transaction ID</th>
-              <th>Sender address</th>
-              <th>Recipient's address</th>
-              <th>Block confirmations</th>
-              <th>Date</th>
-              <th>Value</th>
-              <th>Transaction Fee</th>
+              <th scope="col">Block number</th>
+              <th scope="col">Transaction ID</th>
+              <th scope="col">Sender address</th>
+              <th scope="col">Recipient's address</th>
+              <th scope="col">Block confirmations</th>
+              <th scope="col">Date</th>
+              <th scope="col">Value</th>
+              <th scope="col">Transaction Fee</th>
             </tr>
           </thead>
           <tbody>
             {currentTableData.map(item => {
               return (
                 <tr key={item.id}>
-                  <td key={nanoid()}>{parseInt(item.blockNumber)}</td>
-                  <td key={nanoid()}>{genCell(item.hash)}</td>
-                  <td key={nanoid()}>{genCell(item.from)}</td>
-                  <td key={nanoid()}>{genCell(item.to)}</td>
-                  <td key={nanoid()}>{calcConfirmBlock(item.blockNumber)}</td>
-                  <td key={nanoid()}>{genDate(item.timestamp)}</td>
-                  <td key={nanoid()}>{parseInt(item.value) / 10 ** 18}</td>
-                  <td key={nanoid()}>{parseInt(item.totalfee) / 10 ** 18}</td>
+                  <td key={nanoid()} data-label="Block number">
+                    {parseInt(item.blockNumber)}
+                  </td>
+                  <td key={nanoid()} data-label="Transaction ID">
+                    {genCell(item.hash)}
+                  </td>
+                  <td key={nanoid()} data-label="Sender address">
+                    {genCell(item.from)}
+                  </td>
+                  <td key={nanoid()} data-label="Recipient's address">
+                    {genCell(item.to)}
+                  </td>
+                  <td key={nanoid()} data-label="Block confirmations">
+                    {calcConfirmBlock(item.blockNumber)}
+                  </td>
+                  <td key={nanoid()} data-label="Date">
+                    {genDate(item.timestamp)}
+                  </td>
+                  <td key={nanoid()} data-label="Value">
+                    {parseInt(item.value) / 10 ** 18}
+                  </td>
+                  <td key={nanoid()} data-label="Transaction Fee">
+                    {parseInt(item.totalfee) / 10 ** 18}
+                  </td>
                 </tr>
               );
             })}

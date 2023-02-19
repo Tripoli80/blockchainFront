@@ -16,6 +16,9 @@
   // border: 1px solid $color-grey-light;
   background-color: $white-color;
   cursor: pointer;
+  @include mq(mobile-only) {
+    margin-right: auto;
+  }
   &:before {
     position: absolute;
     content: '';
@@ -27,6 +30,9 @@
     display: block;
     width: 1px;
     background-color: $grey-color;
+    @include mq(mobile-only) {
+      display: none;
+    }
   }
   p {
     margin: 0;
@@ -40,6 +46,9 @@
       padding: 4px;
       transform: rotate(45deg);
       -webkit-transform: rotate(45deg);
+    }
+    @include mq(mobile-only) {
+      padding: 0;
     }
   }
   .dropdown-content {

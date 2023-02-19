@@ -69,6 +69,10 @@ function App() {
       case 'transaction id':
         selected = 'hash';
         break;
+
+      case 'block number':
+        selected = 'blockNumber';
+        break;
       default:
         selected = '';
     }
@@ -78,6 +82,9 @@ function App() {
     }
 
     if (search && selected) {
+      if (selected === 'blockNumber') {
+        search = Number(search).toString(16);
+      }
       const toQueryString = `&filter=${selected}&search=${search}`;
       setQueryString(toQueryString);
     } else {
@@ -117,7 +124,7 @@ function App() {
           />
         </div>
       )}
-<Footer/>
+      <Footer />
       <ToastContainer />
     </div>
   );

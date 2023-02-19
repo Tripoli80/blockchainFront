@@ -8,17 +8,26 @@ h1 {
   margin: 0;
 }
 header {
+  padding: 0 10px ;
   background-color: $bg-color;
+  .container {
+    max-width: none;
+  }
 }
 
 .logo {
-padding-top: 10px;
-padding-bottom:10px;
-margin-right: auto;
-  font-family: "Montserrat";
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-right: auto;
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
   line-height: 49px;
   color: $white-color;
+    margin-left: 130px;
+
+  @include mq(mobile-only) {
+    margin-left: 15px;
+  }
 }

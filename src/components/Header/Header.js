@@ -1,8 +1,9 @@
 export const Header = () => {
   return (
-    <header >
+    <header>
       <div className="container">
-      <div className="logo">AppCo</div></div>
+        <div className="logo">AppCo</div>
+      </div>
     </header>
   );
 };

@@ -3,7 +3,7 @@ export default function Buttom(props) {
   const btnContent = props.content ? props.content : '';
   const btnType = props.type ? props.type : '';
   const extStyle = props.extStyle ? props.extStyle : {};
-  const onClick = props.onClick ? props.onClick : () => { };
+  const onClick = props.onClick ? props.onClick : () => {};
   const classScss = props.custumStyle ? props.custumStyle : '';
 
   const btnStyles = {
@@ -14,15 +14,14 @@ export default function Buttom(props) {
     background: '#3A80BA',
     borderRadius: '8px',
     backgroundPosition: 'center',
-    // backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
   };
   return (
     <button
       style={{ ...btnStyles, ...extStyle, backgroundImage: `url(${bgImage})` }}
-      className={classScss}
       type={btnType}
       onClick={() => onClick(btnContent)}
+      className={classScss}
     >
       {btnContent}
     </button>

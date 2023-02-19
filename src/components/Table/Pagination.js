@@ -74,6 +74,7 @@ export const Pagination = props => {
             key={pageNumber}
             content={pageNumber}
             extStyle={{ ...extStyle, ...noActive }}
+            custumStyle="pag-item"
             onClick={() => onPageChange(pageNumber)}
           />
           // <li

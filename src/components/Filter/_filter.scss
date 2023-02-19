@@ -1,13 +1,13 @@
 .filter {
+  
   &__form {
-  margin-right: auto;
-
+    margin-right: auto;
     position: relative;
     width: 381px;
     height: 48px;
     margin-top: 60px;
 
-    background: #ffffff;
+    background: $white-color;
     // opacity: 0.1;
     border: 1px solid $grey-color;
     border-radius: 10px;
@@ -17,10 +17,14 @@
     justify-content: space-between;
     padding-left: 16px;
     // margin-right: 20px;
+    @include mq(mobile-only) {
+    width: calc(100% - 48px - 32px - 12px);
+  
+      flex-direction: column;
+    }
   }
   &__search {
     display: block;
-    
 
     height: 100%;
 
@@ -35,6 +39,10 @@
     &:focus {
       outline: none !important;
       border-color: $white-color;
+    }
+    @include mq(mobile-only) {
+      width: 100%; 
+    
     }
   }
 

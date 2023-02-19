@@ -41,16 +41,19 @@ main {
   margin-right: auto;
 }
 .container {
-  padding: 0 130px;
+  position: relative;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   width: 100%;
 
-  @include mq(mobile) {
+  @include mq(mobile-only) {
+    padding: 10px ;
+
     max-width: 480px;
+    // padding: 0;
   }
 
   @include mq(tablet) {
@@ -58,6 +61,8 @@ main {
   }
 
   @include mq(tablet) {
+    // padding: 0 130px;
+
     max-width: 1440px;
   }
 }
