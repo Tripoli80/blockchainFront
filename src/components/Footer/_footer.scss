@@ -30,12 +30,18 @@
     font-weight: 400;
     font-size: 24px;
     line-height: 29px;
+       @include mq(mobile-only) {
+ font-size: 12px;
+    }
   }
   &__right {
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 142%;
+          @include mq(mobile-only) {
+ font-size: 12px;
+    }
   }
   &__year {
 
@@ -44,5 +50,8 @@
     font-size: 16px;
     line-height: 142%;
     margin-right: 0;
+          @include mq(mobile-only) {
+ font-size: 12px;
+    }
   }
 }

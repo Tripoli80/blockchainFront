@@ -1,6 +1,5 @@
 @import '../../sass/base/var';
 @import '../../sass/utils/mixim';
-@import '../../sass/utils/placeholder';
 @import '../../sass/base/default';
 @import '../Header/header';
 @import '../Filter/filter';
@@ -9,7 +8,7 @@
 @import '../Footer/footer';
 
 .App {
-   display: flex;
+  display: flex;
   flex-direction: column;
   height: 100vh;
 }
