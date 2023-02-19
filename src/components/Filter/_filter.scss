@@ -1,0 +1,46 @@
+.filter {
+  &__form {
+  margin-right: auto;
+
+    position: relative;
+    width: 381px;
+    height: 48px;
+    margin-top: 60px;
+
+    background: #ffffff;
+    // opacity: 0.1;
+    border: 1px solid $grey-color;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 16px;
+    // margin-right: 20px;
+  }
+  &__search {
+    display: block;
+    
+
+    height: 100%;
+
+    font-family: 'Montserrat';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    background-color: transparent;
+    border: none;
+    &:hover,
+    &:focus {
+      outline: none !important;
+      border-color: $white-color;
+    }
+  }
+
+  &__submit {
+    position: absolute;
+    right: 0;
+    transform: translateX(calc(100% + 16px));
+  }
+}

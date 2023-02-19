@@ -1,0 +1,95 @@
+html,
+body {
+  height: 100vh;
+}
+body {
+  font-family: $font-sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+main {
+  // max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container {
+  padding: 0 130px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  width: 100%;
+
+  @include mq(mobile) {
+    max-width: 480px;
+  }
+
+  @include mq(tablet) {
+    max-width: 768px;
+  }
+
+  @include mq(tablet) {
+    max-width: 1440px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+button {
+  padding: 0;
+  border: none;
+  // font: inherit;
+  color: inherit;
+  background-color: transparent;
+  /* отображаем курсор в виде руки при наведении; некоторые
+  считают, что необходимо оставлять стрелочный вид для кнопок */
+  cursor: pointer;
+}
+
+html {
+  scroll-behavior: smooth;
+}

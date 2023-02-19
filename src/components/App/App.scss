@@ -1,5 +1,17 @@
+@import '../../sass/base/var';
+@import '../../sass/utils/mixim';
+@import '../../sass/utils/placeholder';
+@import '../../sass/base/default';
+@import '../Header/header';
+@import '../Filter/filter';
+@import '../Select/select';
+@import '../Table/table';
+@import '../Footer/footer';
+
 .App {
-  text-align: center;
+   display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .App-logo {
