@@ -17,7 +17,7 @@ export default function Table(props) {
   };
 
   const genCell = txt => {
-    txt = txt ? txt.toString() : 'no data';
+    txt = txt || txt === 0 ? txt.toString() : 'no data';
     const newTxt = txt.length > 10 ? txt.substring(0, 10) + '...' : txt;
 
     return (
