@@ -42,7 +42,6 @@ img {
   
   @include mq(mobile-only) {
     max-width: 320px;
-    // padding: 0;
   }
 
   @include mq(tablet) {
@@ -50,10 +49,8 @@ img {
   }
 
   @include mq(desktop) {
-    // padding: 0 130px;
 
     max-width: 1440px;
-    // padding: 130px 130px;
   }
 }
 
@@ -79,8 +76,6 @@ button {
   border: none;
   color: inherit;
   background-color: transparent;
-  /* отображаем курсор в виде руки при наведении; некоторые
-  считают, что необходимо оставлять стрелочный вид для кнопок */
   cursor: pointer;
 }
 

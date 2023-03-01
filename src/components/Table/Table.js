@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
 import { toast } from 'react-toastify';
 import { Pagination } from './Pagination';
-import { nanoid } from 'nanoid';
 
 export default function Table(props) {
   const { data, size, total, currentBlockNumber } = props;
@@ -18,16 +17,14 @@ export default function Table(props) {
 
   const genCell = txt => {
     txt = txt || txt === 0 ? txt.toString() : 'no data';
-    const newTxt = txt.length > 10 ? txt.substring(0, 10) + '...' : txt;
 
     return (
       <span
-        title={`Click to copy ${newTxt}`}
-        key={nanoid()}
-        style={{ cursor: 'help' }}
+        title={`Click to copy ${txt}`}
+        className="tddots"
         onClick={() => handleCopyClick(txt)}
       >
-        {newTxt}
+        {txt}
       </span>
     );
   };
@@ -36,8 +33,8 @@ export default function Table(props) {
     return confirm;
   };
   const genDate = time => {
-    const timestamp = parseInt(time); // пример временной метки в 16-ричной системе (0x19118D78E80)
-    const date = new Date(timestamp * 1000); // создаем объект Date из временной метки
+    const timestamp = parseInt(time);
+    const date = new Date(timestamp * 1000);
     const monthNames = [
       'Jan',
       'Feb',
@@ -57,8 +54,7 @@ export default function Table(props) {
       '-' +
       date.getDate() +
       '-' +
-      date.getFullYear(); // форматируем дату в нужном формате (например, "Mar-17-2021")
-    // console.log(formattedDate);
+      date.getFullYear();
     return formattedDate;
   };
   return (
@@ -78,31 +74,23 @@ export default function Table(props) {
             </tr>
           </thead>
           <tbody>
-            {currentTableData.map(item => {
+            {currentTableData.map((item, index) => {
               return (
-                <tr key={nanoid()}>
-                  <td key={nanoid()} data-label="Block number">
+                <tr key={index}>
+                  <td data-label="Block number">
                     {genCell(parseInt(item.blockNumber))}
                   </td>
-                  <td key={nanoid()} data-label="Transaction ID">
-                    {genCell(item.hash)}
-                  </td>
-                  <td key={nanoid()} data-label="Sender address">
-                    {genCell(item.from)}
-                  </td>
-                  <td key={nanoid()} data-label="Recipient's address">
-                    {genCell(item.to)}
-                  </td>
-                  <td key={nanoid()} data-label="Block confirmations">
+                  <td data-label="Transaction ID">{genCell(item.hash)}</td>
+                  <td data-label="Sender address">{genCell(item.from)}</td>
+                  <td data-label="Recipient's address">{genCell(item.to)}</td>
+                  <td data-label="Block confirmations">
                     {calcConfirmBlock(item.blockNumber)}
                   </td>
-                  <td key={nanoid()} data-label="Date">
-                    {genDate(item.timestamp)}
-                  </td>
-                  <td key={nanoid()} data-label="Value">
+                  <td data-label="Date">{genDate(item.timestamp)}</td>
+                  <td data-label="Value">
                     {genCell(parseInt(item.value) / 10 ** 18)}
                   </td>
-                  <td key={nanoid()} data-label="Transaction Fee">
+                  <td data-label="Transaction Fee">
                     {genCell(parseInt(item.totalfee) / 10 ** 18)}
                   </td>
                 </tr>

@@ -1,19 +1,11 @@
-// .transition(@property, @duration) {
-//     transition: @property @duration;
-//     -webkit-transition: @property @duration;
-//     -moz-transition: @property @duration;
-// }
-
 .custom-dropdown {
   position: relative;
   display: inline-block;
   color: pointer;
   text-align: left;
-  // border: 1px solid;
   height: 40px;
   width: 300px;
   margin-right: 10px;
-  // border: 1px solid $color-grey-light;
   background-color: $white-color;
   cursor: pointer;
   @include mq(mobile-only) {
@@ -39,8 +31,6 @@
     padding: 11px;
     color: $dark-color;
     i.icon-chev-down {
-      //   float: right;
-      //   border: solid $color-grey-medium;
       border-width: 0 3px 3px 0;
       display: inline-block;
       padding: 4px;
@@ -56,7 +46,6 @@
     position: absolute;
     background-color: $white-color;
     z-index: 99999;
-    // border: 1px solid $color-grey-light;
     width: 100%;
     top: 40px;
     left: -1px;

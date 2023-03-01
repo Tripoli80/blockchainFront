@@ -1,0 +1,39 @@
+.basicButton {
+  display: block;
+  min-width: 48px;
+  max-width: 48px;
+  height: 48px;
+  background: #3a80ba;
+  border-radius: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.searchBtr {
+  background-image: url('../../search.svg');
+}
+
+.pagBtn {
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #f0f0f0;
+    color: #000;
+ 
+  
+  @include mq(mobile-only) {
+    min-width: 25px !important;
+    max-width: 25px !important;
+    height: 25px !important;
+    margin-left: 2px !important;
+    margin-right: 2px !important;
+    font-size: 10px;
+  }
+
+  &.active {
+     background-color: #3A80BA;
+    color: #fff;
+  }
+}
+
+
+     

@@ -2,13 +2,11 @@ import axios from 'axios';
 import { ToastContainer } from 'react-toastify';
 import { RotatingSquare } from 'react-loader-spinner';
 
-// import logo from './logo.svg';
 import { Filter } from '../Filter/Filter';
 import { Header } from '../Header/Header';
 import Table from '../Table/Table';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.scss';
-// import alldata from '../../data/mack-data.json';
 import { useEffect, useState } from 'react';
 import { Footer } from '../Footer/Footer';
 
@@ -56,7 +54,6 @@ function App() {
   }, [currentPage, queryString]);
 
   const getDataByQuery = () => {
-    // setData(null);
     let selected = '';
     let search = '';
     switch (selectedItem.toLowerCase()) {

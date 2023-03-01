@@ -34,15 +34,14 @@
     }
 
     .arrow {
+      cursor: pointer;
+
       &::before {
         position: relative;
-        /* top: 3pt; Uncomment this to lower the icons as requested in comments*/
         content: '';
-        /* By using an em scale, the arrows will size with the font */
         display: inline-block;
         width: 16px;
         height: 16px;
-        // border: 4px solid ;
         border-right: 4px solid #3a80ba;
         border-top: 4px solid #3a80ba;
         @include mq(mobile-only) {
@@ -76,27 +75,12 @@
   }
 }
 
-.pag-item {
-  @include mq(mobile-only) {
-    min-width: 25px !important;
-    max-width: 25px !important;
-    height: 25px !important;
-    margin-left: 2px !important;
-    margin-right: 2px !important;
-    font-size: 10px;
-  }
-}
-
 table {
   max-width: 1220px;
-
   border-collapse: collapse;
   margin: 16px 0;
   font-size: 0.9em;
   font-family: sans-serif;
-  // width: 100%;
-  // min-width: 400px;
-  // max-width: 1180px;
   margin-left: auto;
   margin-right: auto;
 
@@ -106,9 +90,6 @@ table {
   }
 
   thead tr {
-    // border: 1px solid #000;
-    // display:inline-block;
-
     background-color: $bg-color;
     color: $white-color;
     text-align: left;
@@ -118,7 +99,6 @@ table {
     font-size: 16px;
     line-height: 20px;
     height: 48px;
-    /* identical to box height */
   }
   thead th {
     &:first-child {
@@ -168,17 +148,13 @@ table {
 
   @include mq(mobile-only) {
     margin-top: 20px;
-
     border-collapse: collapse;
-    // margin: 0;
-    // padding: 0;
     width: calc(100% - 14px);
     table-layout: fixed;
     background-color: $grey-color-second;
 
     tbody {
       width: 100%;
-      // padding: 10px;
     }
     caption {
       font-size: 1.2em;
@@ -196,7 +172,6 @@ table {
 
     tr {
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      // box-shadow: #1a1a1a;
       border-bottom: 3px solid #ddd;
       display: block;
       margin-bottom: 16px;
@@ -213,17 +188,11 @@ table {
     }
 
     td::before {
-      /*
-    * aria-label has no advantage, it won't be read inside a table
-    content: attr(aria-label);
-    */
       content: attr(data-label);
       float: left;
       font-weight: bold;
       display: block;
-      // hight:100%;
       text-transform: uppercase;
-      // background-color: blue;
     }
 
     td:last-child {
@@ -235,8 +204,7 @@ table {
     margin-top: 20px;
 
     border-collapse: collapse;
-    // margin: 0;
-    // padding: 0;
+
     width: calc(100% - 100px);
     max-width: 500px;
     table-layout: fixed;
@@ -244,7 +212,6 @@ table {
 
     tbody {
       width: 100%;
-      // padding: 10px;
     }
     caption {
       font-size: 1.2em;
@@ -262,7 +229,6 @@ table {
 
     tr {
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      // box-shadow: #1a1a1a;
       border-bottom: 3px solid #ddd;
       display: block;
       margin-bottom: 16px;
@@ -279,21 +245,25 @@ table {
     }
 
     td::before {
-      /*
-    * aria-label has no advantage, it won't be read inside a table
-    content: attr(aria-label);
-    */
       content: attr(data-label);
       float: left;
       font-weight: bold;
       display: block;
-      // hight:100%;
       text-transform: uppercase;
-      // background-color: blue;
     }
 
     td:last-child {
       border-bottom: 0;
     }
   }
+}
+
+.tddots {
+  cursor: help;
+  display: block;
+  max-width: 90px;
+  overflow: hidden;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

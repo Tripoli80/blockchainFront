@@ -10,52 +10,52 @@ export default function Select({ filterData }) {
     { value: 'blocknumber', label: 'Block Number' },
   ];
   const [activeFilterDropdown, setActiveFilterDropdown] = useState("item-dd'");
-  //   let itemDD;
-  //   let categoryDD;
+
   useEffect(() => {
     const handleClick = e => {
-      const { issel, id } = e.target.dataset;
+      const { issel, id, norerender } = e.target.dataset;
       if (issel) {
-        selectDDValue(id);
+        if (!norerender) selectDDValue(id);
         return;
       }
       handleClickOutside();
     };
     document.addEventListener('mousedown', handleClick, false);
+    return () => {
+      document.removeEventListener('mousedown', handleClick);
+    };
     // eslint-disable-next-line
   }, []);
 
   const filterDropdownClick = () => {
-    setActiveFilterDropdown('item-dd');
+    if (activeFilterDropdown !== 'item-dd') setActiveFilterDropdown('item-dd');
   };
-  // --------------------------------------------------------------------------------
   const selectDDValue = name => {
-    setSelectedItem(name);
-    setActiveFilterDropdown(null);
+    if (name !== selectedItem) {
+      setSelectedItem(name);
+      setActiveFilterDropdown(null);
+    }
   };
 
-  // --------------------------------------------------------------------------------
-
-  const handleClickOutside = () => {
-    //   this.setState({ activeFilterDropdown: null });
+  const handleClickOutside = e => {
     setActiveFilterDropdown(null);
   };
 
   return (
     <>
       <div
-        // ref={node => setItemDD(node)}
+        data-norerender={1}
         className={
           'custom-dropdown ' +
           (activeFilterDropdown === 'item-dd' ? 'show' : '')
         }
       >
-        <p onClick={() => filterDropdownClick()}>
-          {selectedItem ? selectedItem : 'Item'}
+        <p onClick={filterDropdownClick} data-issel={1} data-norerender={1}>
+          {selectedItem ? selectedItem : 'Search...'}
           <i className="icon-chev-down"></i>
         </p>
         <div className="dropdown-content">
-          {itemsList.map((obj, index) => {
+          {itemsList.map(obj => {
             return (
               <a
                 href="/"

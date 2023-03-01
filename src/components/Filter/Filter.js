@@ -1,12 +1,10 @@
 import Buttom from '../Buttom/Buttom';
 import Select from '../Select/Select';
-import background from '../../search.svg';
 
 export const Filter = ({ filterData, searchState, getDataByQuery }) => {
   const onSubmit = e => {
     e.preventDefault();
     getDataByQuery();
-    // filteredData.setSelectedItem();
   };
   const { query, setQuery } = searchState;
   const onChange = e => {
@@ -28,8 +26,8 @@ export const Filter = ({ filterData, searchState, getDataByQuery }) => {
           />
           <Select filterData={filterData} />
           <Buttom
-            bgUrl={background}
             type="submit"
+            bgUrl={'searchBtr'}
             custumStyle={'filter__submit'}
           />
         </form>

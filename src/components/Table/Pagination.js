@@ -2,8 +2,6 @@ import React from 'react';
 import classnames from 'classnames';
 import { usePagination, DOTS } from './usePagination';
 import Buttom from '../Buttom/Buttom';
-import { nanoid } from 'nanoid';
-// import './ation.scss';
 export const Pagination = props => {
   const {
     onPageChange,
@@ -46,49 +44,26 @@ export const Pagination = props => {
       >
         <div className="arrow left" />
       </li>
-      {paginationRange.map(pageNumber => {
+      {paginationRange.map((pageNumber, index) => {
         if (pageNumber === DOTS) {
           return (
-            <li key={nanoid()} className="pagination-item dots">
+            <li key={pageNumber + index} className="pagination-item dots">
               &#8230;
             </li>
           );
         }
-        const extStyle = {
-          marginLeft: 4,
-          marginRight: 4,
-        };
-        const noActive =
-          pageNumber !== currentPage
-            ? {
-                backgroundColor: '#f0f0f0',
-                color: '#000',
-              }
-            : {
-                backgroundColor: '#3A80BA',
-                color: '#fff',
-              };
+        const noActive = pageNumber === currentPage ? 'active' : '';
 
         return (
           <Buttom
             key={pageNumber}
             content={pageNumber}
-            extStyle={{ ...extStyle, ...noActive }}
-            custumStyle="pag-item"
+            custumStyle={`pagBtn ${noActive}`}
             onClick={() => onPageChange(pageNumber)}
           />
-          // <li
-          //   className={classnames('pagination-item', {
-          //     selected: pageNumber === currentPage,
-          //   })}
-          //   onClick={() => onPageChange(pageNumber)}
-          // >
-          //   {pageNumber}
-          // </li>
         );
       })}
       <li
-        key={nanoid()}
         className={classnames('pagination-item', {
           disabled: currentPage === lastPage,
         })}
