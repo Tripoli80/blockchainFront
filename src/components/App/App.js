@@ -22,13 +22,13 @@ function App() {
   useEffect(() => {
     axios
       .get(
-        `https://lazy-gold-fish-sock.cyclic.app/api/transactions?size=${size}`
+        `http://ec2-18-184-163-37.eu-central-1.compute.amazonaws.com:3009/api/transactions?size=${size}`
       )
       .then(response => {
         const { total, result, lastBlock } = response.data;
         setTotal(total);
         setLastBlock(lastBlock);
-        setData(result?result:[]);
+        setData(result ? result : []);
       })
       .catch(error => {
         console.log(error);
@@ -40,7 +40,7 @@ function App() {
 
     axios
       .get(
-        `https://lazy-gold-fish-sock.cyclic.app/api/transactions?size=${size}&page=${currentPage}${queryString}`
+        `http://ec2-18-184-163-37.eu-central-1.compute.amazonaws.com:3009/api/transactions?size=${size}&page=${currentPage}${queryString}`
       )
       .then(response => {
         const { total, result, lastBlock } = response.data;
@@ -90,7 +90,7 @@ function App() {
     }
   };
 
-  const toReset = () => { 
+  const toReset = () => {
     setSelectedItem('Choose...')
     setCurrentPage(1);
     setQueryString('');
