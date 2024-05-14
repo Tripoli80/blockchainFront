@@ -19,10 +19,11 @@ function App() {
   const [queryString, setQueryString] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const size = 14;
+  const server = "http://ec2-18-184-163-37.eu-central-1.compute.amazonaws.com:3009/api/transactions"
   useEffect(() => {
     axios
       .get(
-        `http://ec2-18-184-163-37.eu-central-1.compute.amazonaws.com:3009/api/transactions?size=${size}`
+        `${server}?size=${size}`
       )
       .then(response => {
         const { total, result, lastBlock } = response.data;
@@ -40,7 +41,7 @@ function App() {
 
     axios
       .get(
-        `http://ec2-18-184-163-37.eu-central-1.compute.amazonaws.com:3009/api/transactions?size=${size}&page=${currentPage}${queryString}`
+        `${server}?size=${size}&page=${currentPage}${queryString}`
       )
       .then(response => {
         const { total, result, lastBlock } = response.data;
